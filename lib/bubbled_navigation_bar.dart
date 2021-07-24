@@ -18,6 +18,7 @@ class BubbledNavigationBar extends StatefulWidget {
   final Curve animationCurve;
   final Duration animationDuration;
   final ValueChanged<int> onTap;
+  final BoxDecoration boxDecoration;
 
   BubbledNavigationBar({
     Key key,
@@ -31,6 +32,7 @@ class BubbledNavigationBar extends StatefulWidget {
     this.onTap,
     this.animationCurve = Curves.easeInOutQuad,
     this.animationDuration,
+    this.boxDecoration,
   }) : 
   assert(items != null), 
   assert(items.length >= 2), 
@@ -230,6 +232,7 @@ class _BubbledNavigationBarState extends State<BubbledNavigationBar> with Ticker
         minHeight: kBottomNavigationBarHeight + additionalBottomPadding,
       ),
       child: Container(
+        decoration: widget.boxDecoration,
         color: widget.backgroundColor,
         child: Padding(
           padding: EdgeInsets.only(
