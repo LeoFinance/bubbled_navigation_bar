@@ -14,7 +14,7 @@ class BubbledNavigationBar extends StatefulWidget {
   final double iconRightMargin;
   final EdgeInsets? itemMargin;
   final Color defaultBubbleColor;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final Curve animationCurve;
   final Duration? animationDuration;
   final ValueChanged<int>? onTap;
@@ -28,7 +28,7 @@ class BubbledNavigationBar extends StatefulWidget {
     this.iconRightMargin = 6,
     this.initialIndex = 0,
     this.itemMargin,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor,
     this.onTap,
     this.animationCurve = Curves.easeInOutQuad,
     this.animationDuration,
@@ -56,12 +56,12 @@ class _BubbledNavigationBarState extends State<BubbledNavigationBar>
 
   MenuPositionController? _controller;
 
-  List<GlobalKey> titlesKeys = List<GlobalKey>.empty();
-  List<GlobalKey> iconsKeys = List<GlobalKey>.empty();
-  List<double> titleWidths = List<double>.empty();
-  List<double> iconsWidths = List<double>.empty();
+  List<GlobalKey> titlesKeys = <GlobalKey>[];
+  List<GlobalKey> iconsKeys = <GlobalKey>[];
+  List<double> titleWidths = <double>[];
+  List<double> iconsWidths = <double>[];
 
-  List<Rect> selectedItemsRects = List<Rect>.empty();
+  List<Rect> selectedItemsRects = <Rect>[];
 
   @override
   void initState() {
