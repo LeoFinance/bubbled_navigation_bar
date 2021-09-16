@@ -524,8 +524,7 @@ class MenuPositionController extends ValueNotifier<MenuPositionState> {
   MenuPositionController({required int initPosition})
       : super(MenuPositionState(lastPosition: initPosition));
 
-  MenuPositionController.fromValue(MenuPositionState value)
-      : super(value ?? MenuPositionState.init);
+  MenuPositionController.fromValue(MenuPositionState value) : super(value);
 
   void animateToPosition(int position, {Curve? curve, Duration? duration}) {
     _animationController = AnimationController(
